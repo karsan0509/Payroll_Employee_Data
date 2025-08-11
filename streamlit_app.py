@@ -5,8 +5,7 @@ from fpdf import FPDF
 import os
 import base64
 
-EXCEL_FILE = "C:/Users/Administrator/Desktop/Project Sem-3/Payroll_Management_Data.xlsx"
-
+EXCEL_FILE = "Payroll_Management_Data.xlsx"
 if not os.path.exists(EXCEL_FILE):
     df_init = pd.DataFrame(columns=[
         "Employee Code", "Name", "Gender", "DOB", "DOJ", "Department",
@@ -189,4 +188,5 @@ if save:
     df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
     df.to_excel(EXCEL_FILE, index=False)
     st.success("Record saved to Excel.")
+
 
